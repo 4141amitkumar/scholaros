@@ -4,7 +4,7 @@ let authToken = null;
 let testResults = [];
 let currentQuestion = null;
 
-const API_BASE_URL = 'https://scholaros-4.onrender.com/';
+const API_BASE_URL = 'https://scholaros-4.onrender.com/api';
 
 // Utility function for API calls
 async function apiCall(endpoint, method = 'GET', data = null) {
