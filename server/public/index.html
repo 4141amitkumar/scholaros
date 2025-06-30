@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">Scholaro</div>
     <div class="hamburger" onclick="toggleMenu()">☰</div>
@@ -18,18 +18,24 @@
       <a href="#">About</a>
       <a href="#">Help</a>
     </div>
-    <div class="nav-buttons">
-      <button class="btn btn-login">Login</button>
-      <button class="btn btn-register">Register</button>
+    <div class="nav-buttons auth-buttons">
+      <button onclick="openModal('loginModal')" class="btn">Login</button>
+      <button onclick="openModal('registerModal')" class="btn">Register</button>
+    </div>
+    <div id="userMenu" class="hidden">
+      <span id="userName"></span>
+      <button onclick="logout()" class="btn">Logout</button>
     </div>
   </nav>
 
+  <!-- Hero Section -->
   <section class="hero">
     <h1>Welcome to Scholaro</h1>
     <p>Your comprehensive platform for GRE, GMAT, IELTS, TOEFL, Duolingo preparation and global university admissions</p>
     <button class="hero-btn" onclick="startPreparing()">Start Preparing</button>
   </section>
 
+  <!-- Features Section -->
   <section class="features">
     <div class="feature-box">
       <h3>Test Preparation</h3>
@@ -45,7 +51,28 @@
     </div>
   </section>
 
-  <script src="script.js"></script>
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal" style="display: none;">
+    <form id="loginForm" class="modal-content">
+      <h2>Login</h2>
+      <input type="email" id="loginEmail" placeholder="Email" required />
+      <input type="password" id="loginPassword" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <!-- Register Modal -->
+  <div id="registerModal" class="modal" style="display: none;">
+    <form id="registerForm" class="modal-content">
+      <h2>Register</h2>
+      <input type="text" id="registerName" placeholder="Full Name" required />
+      <input type="email" id="registerEmail" placeholder="Email" required />
+      <input type="password" id="registerPassword" placeholder="Password" required />
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <!-- Scripts -->
   <script src="updated_frontend_js.js"></script>
 </body>
 </html>
